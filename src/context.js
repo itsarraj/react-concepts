@@ -1,4 +1,5 @@
 import { createContext } from 'react';
-const colorContext = createContext('white');
+const itemContext = createContext(0);
+const priceContext = createContext(0);
 
-export { colorContext };
+export { itemContext, priceContext };
