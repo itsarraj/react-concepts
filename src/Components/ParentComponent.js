@@ -1,5 +1,5 @@
 import { ChildComponent } from './ChildComponent';
-import colorContext from '../../context';
+import { colorContext } from '../context.js';
 import { useState } from 'react';
 const ParentComponent = () => {
     const [color, setColor] = useState('red');
