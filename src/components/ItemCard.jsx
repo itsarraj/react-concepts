@@ -1,19 +1,20 @@
 import React from 'react';
 import styles from '../styles/ItemCard.module.css';
-import { useContext } from 'react';
 import { useValue } from '../itemContext';
 
 function ItemCard({ name, price }) {
-    const { item, setItem, total, setTotal } = useValue();
-    const handleAdd = () => {
-        setItem(item + 1);
-        setTotal(total + price);
-    };
+    const { handleAdd, handleRemove } = useValue();
+    // const { item, setItem, total, setTotal } = useValue();
 
-    const handleRemove = () => {
-        setItem(item - 1);
-        setTotal(total - price);
-    };
+    // const handleAdd = () => {
+    //     setItem(item + 1);
+    //     setTotal(total + price);
+    // };
+
+    // const handleRemove = () => {
+    //     setItem(item - 1);
+    //     setTotal(total - price);
+    // };
 
     return (
         <div className={styles.itemCard}>
@@ -22,13 +23,13 @@ function ItemCard({ name, price }) {
             <div className={styles.itemButtonsWrapper}>
                 <button
                     className={styles.itemButton}
-                    onClick={() => handleAdd()}
+                    onClick={() => handleAdd(price)}
                 >
                     Add
                 </button>
                 <button
                     className={styles.itemButton}
-                    onClick={() => handleRemove()}
+                    onClick={() => handleRemove(price)}
                 >
                     Remove
                 </button>
