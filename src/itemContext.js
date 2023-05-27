@@ -20,6 +20,11 @@ function CustomItemContext({ children }) {
         setItem(item - 1);
         setTotal(total - price);
     };
+
+    const handleReset = () => {
+        setItem(0);
+        setTotal(0);
+    };
     return (
         <>
             <itemContext.Provider
@@ -30,6 +35,7 @@ function CustomItemContext({ children }) {
                     setTotal,
                     handleAdd,
                     handleRemove,
+                    handleReset,
                 }}
             >
                 {children}
